@@ -69,7 +69,8 @@ public class Homework1 {
      * Prints the number of timezones for each country in the form {@code name:timezones}, in the ascending order of the number of timezones.
      */
     public void streamPipeline8() {
-        countries.stream().sorted(Comparator.comparing(country -> country.getTimezones().size())).forEach(country -> System.out.println(country.getName() + ": " + country.getPopulation()));
+      
+      
     }
 
     /**
@@ -91,8 +92,9 @@ ed by the language code "es").
      * Prints all distinct language tags of country name translations sorted in alphabetical order.
      */
     public void streamPipeline11() {
-        // TODO
+       //TODO
     }
+    
 
     /**
      * Returns the average length of country names.
@@ -119,14 +121,15 @@ ed by the language code "es").
      * Prints the names of countries with a non-null area below 1.
      */
     public void streamPipeline15() {
-        // TODO
+       countries.stream().filter(country -> country.getArea() != null && country.getName().toUpperCase().contains("island".toUpperCase())).map(country -> country.getName()).forEach(System.out::println);
     }
 
     /**
      * Prints all distinct timezones of European and Asian countries.
      */
     public void streamPipeline16() {
-        // TODO
+        countries.stream().filter(country -> country.getRegion() == Region.EUROPE || country.getRegion() == Region.ASIA).flatMap(country -> country.getTimezones().stream()).distinct().forEach(System.out::println);
+
     }
 
 }
