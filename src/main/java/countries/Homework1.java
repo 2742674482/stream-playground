@@ -70,7 +70,7 @@ public class Homework1 {
      */
     public void streamPipeline8() {
       
-      countries.stream().sorted(Comparator.comparing(country -> country.getTimezones().size())).forEach(country -> System.out.println(country.getName() + ": " + country.getTimezones()));
+      countries.stream().sorted(Comparator.comparing(country -> country.getTimezones().size())).forEach(country -> System.out.println(country.getCode()+" "+country.getName() + ": " + country.getTimezones()));
     }
 
     /**
