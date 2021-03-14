@@ -121,7 +121,7 @@ ed by the language code "es").
      * Prints the names of countries with a non-null area below 1.
      */
     public void streamPipeline15() {
-       countries.stream().filter(country -> country.getArea() != null && country.getName().toUpperCase().contains("island".toUpperCase())).map(country -> country.getName()).forEach(System.out::println);
+       countries.stream().filter(country -> country.getArea() != null && country.getArea().compareTo(BigDecimal.ONE)<0).map(Country::getName).forEach(System.out::println);
     }
 
     /**
